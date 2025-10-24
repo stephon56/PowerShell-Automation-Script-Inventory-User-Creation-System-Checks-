@@ -1,11 +1,10 @@
-PowerShell IT Automation Scripts
+# RMM Dashboard Mockup
 
-This collection automates basic IT admin tasks:
+## Author
+**Stephon Villafana**
 
-Collects hardware/software inventory
-
-Creates new users
-
-Performs system health checks
-
-💻 Built for use by MSPs and small IT teams to speed up daily operations.
+## Overview
+A simple HTML/JS interface that simulates an RMM system’s device monitoring view:
+- Displays system status (Online/Offline)
+- Shows CPU and RAM usage
+- Built to demonstrate UI understanding of monitoring tools

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini RMM Dashboard</title>
+  <style>
+    body { font-family: Arial; background:#f4f4f4; padding:20px; }
+    .card { background:#fff; padding:15px; margin:10px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+    .online { color:green; } .offline { color:red; }
+  </style>
+</head>
+<body>
+  <h2>Remote Monitoring Dashboard (Mock)</h2>
+  <div id="systems"></div>
+  <script>
+    const systems = [
+      { name: "PC-01", status: "Online", cpu: 45, ram: 68 },
+      { name: "LAPTOP-07", status: "Offline", cpu: 0, ram: 0 },
+      { name: "SRV-01", status: "Online", cpu: 22, ram: 55 }
+    ];
+    const container = document.getElementById('systems');
+    systems.forEach(sys => {
+      container.innerHTML += `
+        <div class="card">
+          <h3>${sys.name}</h3>
+          <p>Status: <span class="${sys.status === 'Online' ? 'online' : 'offline'}">${sys.status}</span></p>
+          <p>CPU Usage: ${sys.cpu}%</p>
+          <p>RAM Usage: ${sys.ram}%</p>
+        </div>`;
+    });
+  </script>
+</body>
+</html>
