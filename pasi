@@ -1,0 +1,29 @@
+System Inventory
+
+Get-ComputerInfo | Select-Object CsName, WindowsVersion, OsArchitecture, CsManufacturer, CsModel, CsTotalPhysicalMemory
+Get-WmiObject Win32_LogicalDisk | Select-Object DeviceID, VolumeName, @{Name="Size(GB)";Expression={"{0:N1}" -f ($_.Size/1GB)}}
+
+
+→ Output to CSV:
+
+$outputPath = "C:\Reports\SystemInventory.csv"
+Get-ComputerInfo | Export-Csv -Path $outputPath -NoTypeInformation
+
+
+User Creation (Active Directory / Local)
+
+$username = Read-Host "Enter new username"
+$password = Read-Host "Enter password" -AsSecureString
+New-LocalUser -Name $username -Password $password -FullName "$username User" -Description "Created via script"
+Add-LocalGroupMember -Group "Administrators" -Member $username
+
+
+System Health Check
+
+$results = @{
+    "ComputerName" = $env:COMPUTERNAME
+    "LastBootUpTime" = (Get-CimInstance Win32_OperatingSystem).LastBootUpTime
+    "DiskFreeSpace(%)" = [math]::Round(((Get-PSDrive C).Free / (Get-PSDrive C).Used) * 100, 2)
+    "FirewallStatus" = (Get-NetFirewallProfile | Where-Object {$_.Enabled -eq $true}).Name -join ", "
+}
+$results | ConvertTo-Json | Out-File "C:\Reports\SystemHealth.json"
