@@ -1,0 +1,5 @@
+📂 powershell-automation
+ ├── system_inventory.ps1
+ ├── user_creation.ps1
+ ├── system_health_check.ps1
+ ├── README.md
