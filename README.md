@@ -1,11 +1,9 @@
-PowerShell IT Automation Scripts
+# Documentation Samples
 
-This collection automates basic IT admin tasks:
+## Author
+**Stephon Villafana**
 
-Collects hardware/software inventory
-
-Creates new users
-
-Performs system health checks
-
-💻 Built for use by MSPs and small IT teams to speed up daily operations.
+## Overview
+Professional IT documentation sample:
+- Windows 10 → 11 Migration SOP
+- Demonstrates structured IT procedures for MSPs and IT support teams
