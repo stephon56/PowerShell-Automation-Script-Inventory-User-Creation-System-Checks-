@@ -1,11 +1,15 @@
-PowerShell IT Automation Scripts
+# PowerShell Automation Scripts
 
+## Author
+**Stephon Villafana**
+
+## Overview
 This collection automates basic IT admin tasks:
+- System inventory
+- User creation
+- System health checks
 
-Collects hardware/software inventory
-
-Creates new users
-
-Performs system health checks
-
-💻 Built for use by MSPs and small IT teams to speed up daily operations.
+## Usage
+- Open PowerShell as Administrator
+- Run the scripts individually
+- Output files are saved in the script directory
